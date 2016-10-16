@@ -14,7 +14,7 @@ As the root becomes imaginary for all x > sqrt(2*V0)=xmax,
 the size of the vector has to be xmax/pi+1.
 Same procedure for cot(x)=-sqrt(*V0/x²-1)*/
 
-pair <dvec, dvec> bijection(double k){
+pair <dvec, dvec> bisection(double k){
 
 	int l = sqrt(2.*k)/pi+1;
 	dvec even_modes(l);
@@ -40,16 +40,15 @@ pair <dvec, dvec> bijection(double k){
 		even_modes[i] = (a1+b1)/2.;
 		uneven_modes[i] = (a2+b2)/2.;
 	}
+
 	pair <dvec, dvec> modes = make_pair(even_modes, uneven_modes);
 	return modes;
 }
 
-/*BOOST_PYTHON_MODULE(bijection){
-	using namespace boost::python;
-	def("bij", bijection);
-}*/
-
 int main(){
-	cout<<bijection(10).first[0]<<'\n'
-	<<bijection(10).second[0];
+	dvec a = bisection(10000).first;
+	for(int i=0; i<a.size(); ++i){
+		cout<<a[i]<<'\n';
+	}
+	
 }

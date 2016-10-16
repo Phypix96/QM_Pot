@@ -18,3 +18,5 @@ SOURCES += main.cpp\
 HEADERS  += qm_pot.h
 
 FORMS    += qm_pot.ui
+
+DISTFILES +=

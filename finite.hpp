@@ -49,8 +49,3 @@ pair <dvec, dvec> bijection(double k){
 	using namespace boost::python;
 	def("bij", bijection);
 }*/
-
-int main(){
-	cout<<bijection(10).first[0]<<'\n'
-	<<bijection(10).second[0];
-}

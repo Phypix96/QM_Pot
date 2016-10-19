@@ -17,7 +17,7 @@ void Legendre(int l, int m){
     double c [l+m+1][l+1] = {};
     c[0][0]=1.;
     for(int n = 1; n <= l+m; ++n){
-        for(int k = 0; k <= min(n,l); ++k){ //es reicht vermutlich bis l zu gehen, da dann die Einträge außen 0 werden
+        for(int k = 0; k <= min(n,l); ++k){ //es reicht vermutlich bis l zu gehen, da dann die EintrÃ¤ge auÃŸen 0 werden
             if(k <= n && n%2 == k%2){
                 if(k == 0){
                    c[n][k] = c[n-1][k+1]; //*(0+1)
